@@ -2,7 +2,7 @@
   <img src="./shadow-clone.jpeg" alt="Shadow Clone Jutsu" width="600"><br><br>
   <h1 align="center">Shadow Clone (그림자 분신술)</h1>
   <p align="center">
-    <strong>Claude Code Plugin for Intelligent Parallel Agent Orchestration</strong><br>
+    <strong>Claude Code Skill for Intelligent Parallel Agent Orchestration</strong><br>
     정찰하고 &middot; 분해하고 &middot; 병렬 실행하고 &middot; 통합 검증합니다
   </p>
 </p>
