@@ -1,4 +1,5 @@
 <p align="center">
+  <img src="./shadow-clone.jpeg" alt="Shadow Clone Jutsu" width="600"><br><br>
   <h1 align="center">Shadow Clone (그림자 분신술 v2)</h1>
   <p align="center">
     <strong>Claude Code Plugin for Intelligent Parallel Agent Orchestration</strong><br>
