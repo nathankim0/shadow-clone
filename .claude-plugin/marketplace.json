@@ -1,0 +1,23 @@
+{
+  "name": "shadow-clone",
+  "owner": {
+    "name": "nathankim0",
+    "email": "nathankim0@github.com"
+  },
+  "metadata": {
+    "description": "그림자 분신술 v2 — 지능형 병렬 에이전트 오케스트레이션 마켓플레이스"
+  },
+  "plugins": [
+    {
+      "name": "shadow-clone",
+      "source": "./",
+      "description": "그림자 분신술 v2 — 지능형 병렬 에이전트 오케스트레이션 플러그인",
+      "version": "1.0.0",
+      "author": {
+        "name": "nathankim0"
+      },
+      "keywords": ["parallel-agents", "orchestration", "shadow-clone", "automation"],
+      "strict": false
+    }
+  ]
+}
