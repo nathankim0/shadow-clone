@@ -52,6 +52,18 @@
 | **역할별** | 복합 작업일 때 | 탐색자 + 구현자 + 검증자 |
 | **단계별** | 의존성이 있을 때 | 1차: 인터페이스 설계 → 2차: 구현 |
 
+### 분신별 모델 자동 매칭
+
+각 분신의 작업 복잡도에 따라 최적 모델이 개별 배정됩니다:
+
+| 작업 성격 | 모델 | 이유 |
+|----------|------|------|
+| 단순 탐색, 파일 검색, 구조 파악 | `haiku` | 속도 우선 |
+| 코드 분석, 패턴 탐지, 리뷰 | `sonnet` | 분석 정확도 필요 |
+| 코드 작성, 수정, 리팩토링 | `sonnet` | 충분한 코드 품질 |
+| 아키텍처 설계, 복잡한 로직 구현 | `opus` | 높은 추론 능력 필요 |
+| 빌드, 테스트 실행, 단순 스크립트 | `haiku` | 속도 우선 |
+
 ### 차별점: 일반 에이전트 호출 vs 그림자 분신술
 
 | 일반 에이전트 호출 | 그림자 분신술 |
@@ -61,6 +73,7 @@
 | 한 번에 끝 | 다중 웨이브: 1차 결과 기반 2차 배치 가능 |
 | 결과 그냥 나열 | 결과 통합 + 충돌 해결 + 품질 검증 |
 | 에이전트 타입 수동 선택 | 서브태스크별 최적 에이전트 타입 자동 매칭 |
+| 모든 에이전트 동일 모델 | 분신별 작업 성격에 따라 haiku/sonnet/opus 개별 배정 |
 
 ---
 
@@ -85,12 +98,12 @@
 
 #### Phase 2: 분해 — 파일/모듈별 전략, 4개 분신
 
-| 분신 | 타입 | 담당 영역 |
-|------|------|----------|
-| clone-1 | Explore | src/components/ |
-| clone-2 | Explore | src/hooks/ + src/utils/ |
-| clone-3 | Explore | src/api/ + src/store/ |
-| clone-4 | Explore | src/pages/ + src/routes/ |
+| 분신 | 타입 | 모델 | 담당 영역 |
+|------|------|------|----------|
+| clone-1 | Explore | haiku | src/components/ |
+| clone-2 | Explore | haiku | src/hooks/ + src/utils/ |
+| clone-3 | Explore | sonnet | src/api/ + src/store/ |
+| clone-4 | Explore | haiku | src/pages/ + src/routes/ |
 
 #### Phase 3: 실행 — 4개 분신 병렬 소환
 
@@ -119,13 +132,13 @@ deprecated API 사용 파일 탐색 중...
 
 #### Phase 2: 분해 — 파일별 배타적 할당, 5개 분신
 
-| 분신 | 타입 | 배타적 파일 |
-|------|------|-----------|
-| clone-1 | general-purpose | file1.ts, file2.ts, file3.ts |
-| clone-2 | general-purpose | file4.ts, file5.ts, file6.ts |
-| clone-3 | general-purpose | file7.ts, file8.ts, file9.ts |
-| clone-4 | general-purpose | file10.ts, file11.ts, file12.ts |
-| clone-5 | general-purpose | file13.ts, file14.ts, file15.ts |
+| 분신 | 타입 | 모델 | 배타적 파일 |
+|------|------|------|-----------|
+| clone-1 | general-purpose | sonnet | file1.ts, file2.ts, file3.ts |
+| clone-2 | general-purpose | sonnet | file4.ts, file5.ts, file6.ts |
+| clone-3 | general-purpose | sonnet | file7.ts, file8.ts, file9.ts |
+| clone-4 | general-purpose | sonnet | file10.ts, file11.ts, file12.ts |
+| clone-5 | general-purpose | sonnet | file13.ts, file14.ts, file15.ts |
 
 #### Phase 3: 실행 — 5개 분신 병렬 수정
 
